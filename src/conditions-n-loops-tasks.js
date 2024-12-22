@@ -21,8 +21,8 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  return number >= 0;
 }
 
 /**
@@ -38,8 +38,14 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  }
+  if (b > c) {
+    return b;
+  }
+  return c;
 }
 
 /**
@@ -82,8 +88,20 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  let flag = false;
+  if (a === 0 || b === 0 || c === 0) {
+    flag = false;
+    return flag;
+  }
+  if (a > b + c || b > a + c || c > a + b) {
+    flag = false;
+    return flag;
+  }
+  if (a === b || a === c || b === c) {
+    flag = true;
+  }
+  return flag;
 }
 
 /**
@@ -135,8 +153,15 @@ function convertNumberToString(/* numberStr */) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let str2 = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    str2 += str[i];
+  }
+  if (str === str2) {
+    return true;
+  }
+  return false;
 }
 
 /**
