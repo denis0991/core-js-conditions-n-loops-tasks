@@ -118,8 +118,30 @@ function isIsoscelesTriangle(a, b, c) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+
+const list = {
+  1: 'I',
+  2: 'II',
+  3: 'III',
+  4: 'IV',
+  5: 'V',
+  6: 'VI',
+  7: 'VII',
+  8: 'VIII',
+  9: 'IX',
+  10: 'X',
+  20: 'XX',
+  30: 'XXX',
+};
+
+function convertToRomanNumerals(num) {
+  let result;
+  if (num in list) {
+    result = list[num];
+  } else {
+    result = list[Number(String(num)[0] + 0)] + list[Number(String(num)[1])];
+  }
+  return result;
 }
 
 /**
@@ -137,7 +159,8 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
+
+function convertNumberToString(/* inputNum */) {
   throw new Error('Not implemented');
 }
 
